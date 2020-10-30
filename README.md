@@ -8,20 +8,20 @@ Here are the step-by-step procedure when I built my own website:
 1. Create an EC2 instance in AWS and choose ubuntu
 1. Connect to the instance using SSH or Instance Connect
 1. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack.
-    A. Since I already using Linux, I just need to ensure the OS was updated by running this command:
+    A. Since I already using Linux, I just need to ensure the OS was updated by running this command: <br/>
     `sudo apt update -y`
-    B. Then install apache
+    B. Then install apache <br/>
     `sudo apt install apache2 -y`
-    C. Install Mariadb (open-source version of MySQL)
+    C. Install Mariadb (open-source version of MySQL) <br/>
     `sudo apt install mariadb-server mariadb-client`
-    D. Configure Mariadb database
-        1. First, start the service of mariadb
+    D. Configure Mariadb database <br/>
+        1. First, start the service of mariadb <br/>
         `sudo systemctl start mariadb`
-        2. Check status
+        2. Check status <br/>
         `sudo systemctl status mariadb`
-        3. configure database
+        3. configure database <br/>
           a. `sudo mysql_secure_installation`
-          it will prompt the following:
+          it will prompt the following: <br/>
           > "Enter current password for root (enter for none):" just press enter
           > "Set root password? [y/n]" just enter y and enter new password
           > "Remove anonymous users? [y/n]" just enter y
