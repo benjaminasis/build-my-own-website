@@ -1,13 +1,14 @@
-# build-my-own-website
-you can check with website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
+# HOW TO BUILD A WEBSITE
+You can check with website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
+
 Here are the step-by-step procedure when I built my own website:
 1. Get a domain name
-   for this one, I bought a domain from godadday worth PHP259
+   ~~ for this one, I bought a domain from godadday worth PHP259
 1. Get a web hosting
     since I have existing free-tier account on AWS, I used it for my web hosting.
 1. Create an EC2 instance in AWS and choose ubuntu
 1. Connect to the instance using SSH or Instance Connect
-1. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack.
+1. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack. <br/>
     A. Since I already using Linux, I just need to ensure the OS was updated by running this command: <br/>
     `sudo apt update -y`
     B. Then install apache <br/>
