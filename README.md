@@ -22,12 +22,12 @@ Here are the step-by-step procedure when I built my own website:
         3. configure database
           a. `sudo mysql_secure_installation`
           it will prompt the following:
-          >"Enter current password for root (enter for none):" just press enter
-          >"Set root password? [y/n]" just enter y and enter new password
-          >"Remove anonymous users? [y/n]" just enter y
-          >"Disallow root login remoterly? [y/n]" just enter y
-          >"Remove test database and access to it? [y/n]" just enter y
-          >"Reload privilege tables now? [y/n]" just enter y
+          > "Enter current password for root (enter for none):" just press enter
+          > "Set root password? [y/n]" just enter y and enter new password
+          > "Remove anonymous users? [y/n]" just enter y
+          > "Disallow root login remoterly? [y/n]" just enter y
+          > "Remove test database and access to it? [y/n]" just enter y
+          > "Reload privilege tables now? [y/n]" just enter y
           b. **DONE**
      E. Install PHP
       `sudo apt install php`
