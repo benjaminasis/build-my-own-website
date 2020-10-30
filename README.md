@@ -3,55 +3,56 @@ You can check with website: [asisexpressonline.com](https://asisexpressonline.co
 
 Here are the step-by-step procedure when I built my own website:
 ### 1. Get a domain name
-   for this one, I bought a domain from godadday worth PHP259
+   * For this one, I bought a domain from godadday worth PHP259
 ### 2. Get a web hosting
-    since I have existing free-tier account on AWS, I used it for my web hosting.
+* Since I have existing AWS free-tier account, I used it for my web hosting 
 ### 3. Create an EC2 instance in AWS and choose ubuntu
 ### 4. Connect to the instance using SSH or Instance Connect
-### 5. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack. <br/>
-    A. Since I already using Linux, I just need to ensure the OS was updated by running this command: <br/>
+### 5. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack. 
+
+* Since I already using Linux, I just need to ensure the OS was updated by running this command: <br/>
     `sudo apt update -y`
-    B. Then install apache <br/>
+* Then install apache <br/>
     `sudo apt install apache2 -y`
-    C. Install Mariadb (open-source version of MySQL) <br/>
+* Install Mariadb (open-source version of MySQL) <br/>
     `sudo apt install mariadb-server mariadb-client`
-    D. Configure Mariadb database <br/>
-        1. First, start the service of mariadb <br/>
+* Configure Mariadb database <br/>
+    * First, start the service of mariadb <br/>
         `sudo systemctl start mariadb`
-        2. Check status <br/>
+    * Check status <br/>
         `sudo systemctl status mariadb`
-        3. configure database <br/>
-          a. `sudo mysql_secure_installation`
-          it will prompt the following: <br/>
-          > "Enter current password for root (enter for none):" just press enter
-          > "Set root password? [y/n]" just enter y and enter new password
-          > "Remove anonymous users? [y/n]" just enter y
-          > "Disallow root login remoterly? [y/n]" just enter y
-          > "Remove test database and access to it? [y/n]" just enter y
-          > "Reload privilege tables now? [y/n]" just enter y
+    * Configure database <br/>
+        * `sudo mysql_secure_installation`
+          <br> It will prompt the following: <br/>
+          > "Enter current password for root (enter for none):" just press enter <br/>
+          > "Set root password? [y/n]" just enter **y** and enter new password <br/>
+          > "Remove anonymous users? [y/n]" just enter **y** <br/>
+          > "Disallow root login remoterly? [y/n]" just enter **y** <br/>
+          > "Remove test database and access to it? [y/n]" just enter **y** <br/>
+          > "Reload privilege tables now? [y/n]" just enter **y** <br/>
           b. **DONE**
-     E. Install PHP
+* Install PHP <br/>
       `sudo apt install php`
-  ### 6. Download WordPress
-     a. First, install wget
+### 6. Download WordPress
+* First, install wget<br/>
      `sudo apt install wget -y`
-     b. Open Google chrome and go to wordpress.org/download/ and right click on "Download WordPress 5.5.x" and select copy link address
-     c. Go to back to CLI and run this command:
+* Open Google chrome and go to wordpress.org/download/ and right click on "Download WordPress 5.5.x" and select copy link address
+* Go to back to CLI and run this command:<br/>
      `wget <paste link adrress here>`
-     d. check if file was downloaded. The file is named "latest.zip"
+* Check if file was downloaded. The file is named "latest.zip" <br/>
       `ls`
-     e. Since the file is .zip, need to unzip it. 
-          1. download unzip
+* Since the file is .zip, need to unzip it. 
+    * Download unzip<br/>
             `sudo apt install unzip -y`
-          2. then unzip the file
+    * Then unzip the file<br/>
             `unzip  latest.zip`
-          3. check the files
+    * Check the files<br/>
             `ls`
-      f. copy the files to **/var/www/html**
+    * Copy the files to **/var/www/html** <br/>
         `sudo cp -r * /var/www/html`
-      g. go to html directory
+    * Go to html directory<br/>
         `cd /var/www/html`
-       h. remove index.html
+    * Remove index.html<br/>
         `sudo rm -rf index.html`
 ### 7. Install PHP modules to integrate PHP to database
   `sudo apt install php-mysql php-cgi php-cli php-gd -y` 
