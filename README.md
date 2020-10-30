@@ -2,13 +2,13 @@
 You can check with website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
 
 Here are the step-by-step procedure when I built my own website:
-1. Get a domain name
-   ~~ for this one, I bought a domain from godadday worth PHP259
-1. Get a web hosting
+### 1. Get a domain name
+   for this one, I bought a domain from godadday worth PHP259
+### 2. Get a web hosting
     since I have existing free-tier account on AWS, I used it for my web hosting.
-1. Create an EC2 instance in AWS and choose ubuntu
-1. Connect to the instance using SSH or Instance Connect
-1. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack. <br/>
+### 3. Create an EC2 instance in AWS and choose ubuntu
+### 4. Connect to the instance using SSH or Instance Connect
+### 5. Once connected, install LAMP (Linux, Apache, MySQL, PHP) stack. <br/>
     A. Since I already using Linux, I just need to ensure the OS was updated by running this command: <br/>
     `sudo apt update -y`
     B. Then install apache <br/>
@@ -32,7 +32,7 @@ Here are the step-by-step procedure when I built my own website:
           b. **DONE**
      E. Install PHP
       `sudo apt install php`
-  1. Download WordPress
+  ### 6. Download WordPress
      a. First, install wget
      `sudo apt install wget -y`
      b. Open Google chrome and go to wordpress.org/download/ and right click on "Download WordPress 5.5.x" and select copy link address
@@ -53,11 +53,11 @@ Here are the step-by-step procedure when I built my own website:
         `cd /var/www/html`
        h. remove index.html
         `sudo rm -rf index.html`
-1. Install PHP modules to integrate PHP to database
+### 7. Install PHP modules to integrate PHP to database
   `sudo apt install php-mysql php-cgi php-cli php-gd -y` 
-1. Restart apache
+### 8. Restart apache
   `sudo systemctl restart apache2`
-1. Change ownership of files under /var/www/
+### 9. Change ownership of files under /var/www/
   `sudo chown -R www-data:www-data /var/www/`
   
   
