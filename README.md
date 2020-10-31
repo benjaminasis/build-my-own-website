@@ -1,5 +1,5 @@
 # HOW TO BUILD A WEBSITE
-You can check with website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
+You can check my website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
 
 Here are the step-by-step procedure when I built my own website:
 ### 1. Get a domain name
