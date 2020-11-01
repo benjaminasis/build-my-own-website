@@ -1,7 +1,7 @@
 # HOW TO BUILD A WEBSITE
 You can check my website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
 
-Here were the step-by-step procedure on how I built my own website:
+Here are the step-by-step procedure on how I built my own website:
 ### 1. Got a domain name
    * For this one, I bought a domain from godadday worth PHP259
 ### 2. Got a web hosting
