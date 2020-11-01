@@ -21,7 +21,7 @@ Here are the step-by-step procedure on how I built my own website:
         `sudo systemctl start mariadb`
     * Checked status <br/>
         `sudo systemctl status mariadb`
-    * Configured database <br/>
+    * Configured the database <br/>
         * `sudo mysql_secure_installation`
           <br> It prompted the following: <br/>
           > "Enter current password for root (enter for none):" just press enter <br/>
@@ -30,7 +30,6 @@ Here are the step-by-step procedure on how I built my own website:
           > "Disallow root login remoterly? [y/n]" just enter **y** <br/>
           > "Remove test database and access to it? [y/n]" just enter **y** <br/>
           > "Reload privilege tables now? [y/n]" just enter **y** <br/>
-          b. **DONE**
 * Installed PHP <br/>
       `sudo apt install php`
 ### 6. Downloaded WordPress
@@ -50,7 +49,7 @@ Here are the step-by-step procedure on how I built my own website:
             `ls`
     * Copied the files to **/var/www/html** <br/>
         `sudo cp -r * /var/www/html`
-    * went html directory<br/>
+    * Went to html directory<br/>
         `cd /var/www/html`
     * Removed index.html<br/>
         `sudo rm -rf index.html`
@@ -62,11 +61,11 @@ Here are the step-by-step procedure on how I built my own website:
   `sudo chown -R www-data:www-data /var/www/`
 ### 10. Installed Wordpress
 * I've copied the Public ip address of EC2 instance and went to google chrome or any web brower and pasted it in the address bar and entered. I was directed to wordpress installation page
-* Select language and click continue. In the next page, I've clicked **Let's go**.
+* Select language and click **continue**. In the next page, I've clicked **Let's go**.
 * Went back to CLI to create a database name and user
     * `sudo mysql -u root -p` then entered my password I've configured on step 5
     * `create database wordpress;`
-    * `create user "wordpress"@"%" identied by "password"`
+    * `create user "wordpress"@"%" identified by "password"`
     * `grant all privileges on wordpress.* to "wordpress"@"%"`
 * Went back to chrome and enter the following 
 > Database name = wordpress <br/>
@@ -77,7 +76,7 @@ Here are the step-by-step procedure on how I built my own website:
 * Then hit **submit**
 * Click **Run installation**
 * Fill-in the information needed and hit **Install Wordpress**
-* Done WordPress installed succesfully
+* Done WordPress installed succesfully!
 ### 11. Map IP address to Domain Name
 * Went to AWS Web Console and open Route 53
 * Selected Hosted Zones and clicked **Created Hosted Zone**
@@ -88,12 +87,11 @@ Here are the step-by-step procedure on how I built my own website:
 * Under Value, I've put my Public IP address of my EC2 instance
 
 ### 12. Installed Elementor Plug-in in WordPress
-I've installed Elementor plug-in as my editor in wordpress
-* I've selected a template and start working on the details of the website. I've watched series of videos to get a hang of *Elementor*
+I've installed Elementor plug-in as my editor in wordpress. I've selected a template and start working on the details of the website. I've watched series of videos to get a hang of *Elementor*.
 ### 13. Installed SSL certificate
-Since my website using HTTP which is unsecure, I installed SSL certificate so all traffic is secured and encrypted and must use HTTPS protocol. Here's what I did:
-* certbot.eff.org is a website which issues free SSL cerficate
-* Open certbot.eff.org and selected *Apache* on Software and *Ubuntu 20.04* on System. Then I followed the instuctions indicated
+Since my website was using unsecure HTTP, I've installed SSL certificate so all traffic are secured and encrypted and must use HTTPS protocol.<br/> 
+Here's what I did:
+1. Open certbot.eff.org *(note: certbot.eff.<snap>org is a website which issues free SSL certificate)* and selected **Apache** on Software and **Ubuntu 20.04** on System. Then I followed the instuctions indicated.
 1. SSH to my EC2 instance
 1. Installed **snapd** <br/>
 `sudo install snapd`
@@ -102,10 +100,10 @@ Since my website using HTTP which is unsecure, I installed SSL certificate so al
 1. Installed Certbot<br/>
 `sudo snap install --classic certbot`
 1. Ensured that Certbot commands were executed<br/>
-`sudo ln -s /snap/bin/certbot /usr/bin/certbot
+`sudo ln -s /snap/bin/certbot /usr/bin/certbot`
 1. Installed my SSL certificated<br/>
-`sudo certbot --apache`
-1. I've visited my website to validate SSL. It showed **ht<span>tps://asisexpressonline.com** and there was padlock sign. It means SSL was successfully installed. 
+`sudo certbot --apache` <br/>
+I've visited my website to validate SSL. It showed **ht<span>tps://asisexpressonline.com** and there was padlock sign. It means SSL was successfully installed. 
 ---
 ---
 ## Issues encountered and solutions
