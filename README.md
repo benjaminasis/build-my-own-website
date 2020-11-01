@@ -1,5 +1,5 @@
 # HOW TO BUILD A WEBSITE
-You can check my website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
+You can check with website: [asisexpressonline.com](https://asisexpressonline.com "Asis Express Online")
 
 Here are the step-by-step procedure when I built my own website:
 ### 1. Get a domain name
@@ -60,15 +60,28 @@ Here are the step-by-step procedure when I built my own website:
   `sudo systemctl restart apache2`
 ### 9. Change ownership of files under /var/www/
   `sudo chown -R www-data:www-data /var/www/`
-  
-  
-  
-  
-  
-     
-     
-  
-        
-        
-        
-   
+### 10. Install Wordpress
+* copy the Public ip address of EC2 instance and go to google chrome or any web brower and paste it in the address bar and enter. You will be directed to wordpress installation page
+* Select language and click continue. In the next page, click **Let's go**.
+* Go back to CLI to create a database name and user
+    * `sudo mysql -u root -p` then enter your password you've configured on step 5
+    * `create database wordpress;`
+    * `create user "wordpress"@"%" identied by "password"`
+    * `grant all privileges on wordpress.* to "wordpress"@"%"`
+* Go back to chrome and enter the following then hit **submit**
+> Database name = wordpress <br/>
+> Username = wordpress <br/>
+> Password = password <br/>
+> Database host = local host <br/>
+> Table Prefix = wp_<br/>
+* Click **Run installation**
+* Fill-in the information needed and hit **Install Wordpress**
+* Done WordPress installed succesfully
+### 11. Map IP address to Domain Name
+* Go to AWS and open Route 53
+* Select Hosted Zones and click **Created Hosted Zone**
+* Enter your domain name (e.g. asisxpressionline.com) and hit **Create**
+* Go to Hosted Zones and Select your Domain name
+* Click **Create Record Set**
+* Do not put anything in Name and ensure Type is *A - IPv4 address*
+* Under Value, put your Public IP address of your EC2 instance
