@@ -77,7 +77,7 @@ Here are the step-by-step procedure on how I built my own website:
 * Click **Run installation**
 * Fill-in the information needed and hit **Install Wordpress**
 * Done WordPress installed succesfully!
-### 11. Map IP address to Domain Name
+### 11. Mapped IP address to Domain Name
 * Went to AWS Web Console and open Route 53
 * Selected Hosted Zones and clicked **Created Hosted Zone**
 * Entered my domain name (i.e. **asisxpressionline.com<span>**) and hit **Create**
@@ -113,11 +113,11 @@ Since I am only using AWS Free-tier account, I stop my EC2 instance whenever I a
 However, when I restarted my EC2 instace and map my new IP address to my domain name in Route 53, I got an error **site cannot be reached** when  I visited my page. <br/>
 I found out that I was being redirected to my old website link. To fix this, I did the following
 *   Connect to EC2 instance, then open wp-config.php file and added the following
-> define('WP_HOME','htt<span>ps://asisexpressonline.com');
+> define('WP_HOME','htt<span>ps://asisexpressonline.com'); <br/>
 define('WP_SITEURL','ht<span>tps://asisexperssonline.com');
 * Save the file and restart Apache and that fixed the issue<br/>
 `sudo systemctl restart apache`
 
 ## 2. Unsecure site even SSL was installed successfully
 I noticed that the padlock sign in the address bar was not showing and **inspect element** in website showed there were unsecure (http) links in my site. <br/>
-The cause of this was some **plug-in** that I installed on my wordpress. What I did is I removed that plug-in and it fixed the issue.
+The cause of this was some **plug-in** (cannot remember what plug-in it was)that I installed on my wordpress. What I did is I removed that plug-in and it fixed the issue.
